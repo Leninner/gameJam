@@ -5,7 +5,10 @@
 }
 
 :root {
-    --main-bg-color: rgb(233, 33, 33);
+    --main-bg-color: #343233;
+    --color-a: #efeae1;
+    --header-color: #584b4f;
+    --enfasis-a: #81c08b;
 }
 
 html {
@@ -13,12 +16,19 @@ html {
     position: relative;
 }
 
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
 /* Header */
 .contenedorHeader {
+    cursor: pointer;
     width: 100%;
     height: 120px;
-    background: var(--main-bg-color);
-    margin-bottom: 20px;
+    background: var(--header-color);
     color: white;
     text-align: center;
 }
@@ -26,29 +36,36 @@ html {
     padding-top: 10px;
 }
 .contenedorHeader a {
+    color: var(--color-a);
     text-decoration: none;
-    color: white;
 }
-.contenedorHeader ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
+.contenedorHeader a:hover {
+    color: var(--enfasis-a);
+    font-weight: 600;
 }
 
 /* Tabla de Juego */
 .contenedorTable {
-    width: 150px;
-    height: 150px;
-    background: rebeccapurple;
+    width: 100%;
+    height: 700px;
+    background: var(--main-bg-color);
 }
 
 /* Footer */
 .contenedorFooter {
-    background-color: var(--main-bg-color);
+    background-color: #efeae1;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 120px;
-    color: white;
+    height: 80px;
+    color: #574c4f;
+}
+
+.contenedorFooter a {
+    color: #574c4f;
+    text-decoration: none;
+}
+
+.contenedorFooter a:hover {
+    font-weight: 600;
 }

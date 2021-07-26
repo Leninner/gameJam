@@ -1,9 +1,9 @@
+import { doTable } from "./gameController.js";
+
 const main = document.querySelector(".main");
 
-function doHeader() {
-    let divContenedorHeader = document.createElement("div"),
-        titleHeader = document.createElement("h1"),
-        menuHeader = document.createElement("ul"),
+function doMenu() {
+    let menu = document.createElement("ul"),
         itemOne = document.createElement("li"),
         itemTwo = document.createElement("li"),
         itemThree = document.createElement("li"),
@@ -18,27 +18,28 @@ function doHeader() {
     reThree.target = "_blank";
     reThree.href = "https://itch.io/jam/top-jam-1";
 
-    titleHeader.innerHTML = "Game Jam";
     reOne.textContent = "Repo";
     reTwo.textContent = "LinkedIn";
     reThree.textContent = "How to play?";
 
-    divContenedorHeader.classList.add("contenedorHeader");
-
     itemOne.appendChild(reOne);
     itemTwo.appendChild(reTwo);
     itemThree.appendChild(reThree);
-    menuHeader.append(itemOne, itemTwo, itemThree);
-    divContenedorHeader.append(titleHeader, menuHeader);
-    main.appendChild(divContenedorHeader);
+    menu.append(itemOne, itemTwo, itemThree);
+
+    return menu;
 }
 
-function doTable() {
-    let divContenedorTable = document.createElement("div");
+function doHeader() {
+    let divContenedorHeader = document.createElement("div"),
+        titleHeader = document.createElement("h1");
 
-    divContenedorTable.classList.add("contenedorTable");
+    titleHeader.innerHTML = "Game Jam";
 
-    main.appendChild(divContenedorTable);
+    divContenedorHeader.classList.add("contenedorHeader");
+
+    divContenedorHeader.append(titleHeader, doMenu());
+    main.appendChild(divContenedorHeader);
 }
 
 function doFooter() {
@@ -46,7 +47,14 @@ function doFooter() {
 
     divContenedorFooter.classList.add("contenedorFooter");
 
+    divContenedorFooter.appendChild(doMenu());
     main.appendChild(divContenedorFooter);
 }
 
-export { doHeader, doTable, doFooter };
+function constructor() {
+    doHeader();
+    doTable();
+    doFooter();
+}
+
+export { constructor };
