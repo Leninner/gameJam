@@ -50,5 +50,5 @@ doSome();
 // Bueno
 
 for(let i=0; i<23; i++>){
-doSome();
+  doSome();
 }
