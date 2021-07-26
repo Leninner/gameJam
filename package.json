@@ -1,24 +1,25 @@
 {
-  "name": "gamejam",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Leninner/gameJam.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Leninner/gameJam/issues"
-  },
-  "homepage": "https://github.com/Leninner/gameJam#readme",
-  "devDependencies": {
-    "css-loader": "^6.2.0",
-    "style-loader": "^3.2.1"
-  }
+    "name": "gamejam",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Leninner/gameJam.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Leninner/gameJam/issues"
+    },
+    "homepage": "https://github.com/Leninner/gameJam#readme",
+    "devDependencies": {
+        "css-loader": "^6.2.0",
+        "style-loader": "^3.2.1"
+    }
 }
