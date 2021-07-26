@@ -43,11 +43,16 @@ function doHeader() {
 }
 
 function doFooter() {
-    let divContenedorFooter = document.createElement("div");
+    let divContenedorFooter = document.createElement("div"),
+        spanFooter = document.createElement("span"),
+        titleFooter = document.createElement("h3");
+
+    titleFooter.textContent = "Developed by Leninner";
 
     divContenedorFooter.classList.add("contenedorFooter");
 
-    divContenedorFooter.appendChild(doMenu());
+    spanFooter.appendChild(titleFooter);
+    divContenedorFooter.append(spanFooter, doMenu());
     main.appendChild(divContenedorFooter);
 }
 

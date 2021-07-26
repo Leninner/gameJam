@@ -26,16 +26,6 @@ function setElements() {
     doTable();
 
     const contenedorTables = document.querySelector(".contenedorTable");
-
-    let muestra = document.createElement("div");
-
-    console.table(goodPractices);
-    console.table(badPractices);
-
-    muestra.style.width = "150px";
-    muestra.style.height = "150px";
-    muestra.style.background = "Red";
-    contenedorTables.appendChild(muestra);
 }
 
 export { setElements };

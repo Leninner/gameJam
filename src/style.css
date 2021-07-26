@@ -55,6 +55,7 @@ ul {
     width: 100%;
     height: 700px;
     background: var(--main-bg-color);
+    display: flex;
 }
 
 /* Footer */
@@ -66,12 +67,22 @@ ul {
     height: 80px;
     color: #574c4f;
 }
-
 .contenedorFooter a {
     color: #574c4f;
     text-decoration: none;
 }
-
 .contenedorFooter a:hover {
     font-weight: 600;
+}
+span {
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Flujo de juego */
+.game {
+    width: 40%;
+    height: 80%;
+    margin: 30px auto;
+    background-color: red;
 }
