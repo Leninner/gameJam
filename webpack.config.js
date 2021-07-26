@@ -2,6 +2,8 @@ const path = require("path");
 
 module.exports = {
     entry: "./src/index.js",
+    devtool: "inline-source-map",
+    //Devtool sirve para rastrear los errores
     output: {
         filename: "main.js",
         path: path.resolve(__dirname, "dist"),

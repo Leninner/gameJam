@@ -1,4 +1,4 @@
-import { doTable } from "./gameController.js";
+import { setElements } from "./gameController.js";
 
 const main = document.querySelector(".main");
 
@@ -53,7 +53,7 @@ function doFooter() {
 
 function constructor() {
     doHeader();
-    doTable();
+    setElements();
     doFooter();
 }
 

@@ -6,8 +6,7 @@ import mascarilla from "./images/mascarilla.jpg";
 import saludable from "./images/saludableFood.jpg";
 import sinMacarilla from "./images/sinMascarilla.jpg";
 import virus from "./images/virus.jpg";
-
-const main = document.querySelector(".main");
+import { doTable } from "./tableMain.js";
 
 let goodPractices = {
     1: { imagen: distancia, frase: "Esto es bueno" },
@@ -23,14 +22,20 @@ let badPractices = {
     4: { imagen: chatarra, frase: "Esto es bueno" },
 };
 
-function doTable() {
-    let divContenedorTable = document.createElement("div");
+function setElements() {
+    doTable();
 
-    divContenedorTable.classList.add("contenedorTable");
+    const contenedorTables = document.querySelector(".contenedorTable");
 
-    main.appendChild(divContenedorTable);
-    console.log(goodPractices[1].imagen);
-    console.log(badPractices[1].imagen);
+    let muestra = document.createElement("div");
+
+    console.table(goodPractices);
+    console.table(badPractices);
+
+    muestra.style.width = "150px";
+    muestra.style.height = "150px";
+    muestra.style.background = "Red";
+    contenedorTables.appendChild(muestra);
 }
 
-export { doTable };
+export { setElements };
