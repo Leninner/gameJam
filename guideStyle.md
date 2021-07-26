@@ -39,16 +39,4 @@ Para desarrollar los comportamientos del sitio web, se deben hacer mediante sus 
 
 ## Indentación
 
-Utilizar 4 espacios:
-
-// Malo
-
-for(let i=0; i<23; i++>){
-doSome();
-}
-
-// Bueno
-
-for(let i=0; i<23; i++>){
-  doSome();
-}
+Utilizar 4 espacios al momento de empezar a hacer algo dentro de un condicional o un ciclo*.
