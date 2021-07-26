@@ -50,7 +50,9 @@ function getWinner() {
             setItemOne(imgOne, 4);
             setItemTwo(imgTwo, 4);
         } else {
-            alert("AUXILIOOOOOOO, NO ME MATssssssES");
+            setItemOne(imgOne, 1);
+            setItemTwo(imgTwo, 1);
+            cont = 1;
         }
 
         cont += 1;
@@ -67,7 +69,9 @@ function getWinner() {
             setItemOne(imgOne, 4);
             setItemTwo(imgTwo, 4);
         } else {
-            alert("AUXILIOOOOOOO, NO ME MATssssssES");
+            setItemOne(imgOne, 1);
+            setItemTwo(imgTwo, 1);
+            cont = 1;
         }
 
         cont += 1;
