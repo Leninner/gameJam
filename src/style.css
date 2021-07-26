@@ -9,6 +9,7 @@
     --color-a: #efeae1;
     --header-color: #584b4f;
     --enfasis-a: #81c08b;
+    --box-game: #ffd152;
 }
 
 html {
@@ -84,5 +85,6 @@ span {
     width: 40%;
     height: 80%;
     margin: 30px auto;
-    background-color: red;
+    background-color: var(--box-game);
+    border-radius: 5px;
 }
