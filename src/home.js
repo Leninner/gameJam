@@ -12,11 +12,11 @@ function doMenu() {
         reThree = document.createElement("a");
 
     reOne.target = "_blank";
-    reOne.href = "#";
+    reOne.href = "https://github.com/Leninner/gameJam";
     reTwo.target = "_blank";
     reTwo.href = "https://www.linkedin.com/in/lenin-mazabanda-1370b41b2/";
     reThree.target = "_blank";
-    reThree.href = "https://itch.io/jam/top-jam-1";
+    reThree.href = "https://github.com/Leninner/gameJam/blob/main/README.md";
 
     reOne.textContent = "Repo";
     reTwo.textContent = "LinkedIn";
