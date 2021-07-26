@@ -1,5 +1,6 @@
 import "./style.css";
-import { doHeader, doTable } from "./home.js";
+import { doHeader, doTable, doFooter } from "./home.js";
 
 doHeader();
 doTable();
+doFooter();

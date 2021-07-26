@@ -1,19 +1,54 @@
 * {
-    background-color: aqua;
     font-family: "Open Sans", sans-serif;
     padding: 0;
     margin: 0;
 }
 
+:root {
+    --main-bg-color: rgb(233, 33, 33);
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+/* Header */
 .contenedorHeader {
     width: 100%;
     height: 120px;
-    background: black;
+    background: var(--main-bg-color);
     margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+.contenedorHeader h1 {
+    padding-top: 10px;
+}
+.contenedorHeader a {
+    text-decoration: none;
+    color: white;
+}
+.contenedorHeader ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
 }
 
+/* Tabla de Juego */
 .contenedorTable {
     width: 150px;
     height: 150px;
     background: rebeccapurple;
+}
+
+/* Footer */
+.contenedorFooter {
+    background-color: var(--main-bg-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    color: white;
 }
