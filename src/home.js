@@ -1,4 +1,5 @@
 import { setElements } from "./gameController.js";
+import { doPopUpWelcome } from "./popup.js";
 
 const main = document.querySelector(".main");
 
@@ -58,6 +59,7 @@ function doFooter() {
 
 function constructor() {
     doHeader();
+    doPopUpWelcome();
     setElements();
     doFooter();
 }

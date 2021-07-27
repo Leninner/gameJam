@@ -13,4 +13,9 @@ function doTable() {
     main.appendChild(divContenedorTable);
 }
 
-export { doTable };
+function createPlayer(user) {
+    this.user = user;
+    this.health = 1000;
+}
+
+export { doTable, createPlayer };
