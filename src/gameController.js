@@ -29,12 +29,10 @@ function getWinner() {
         itemTwo = document.querySelector(".divItemTwo");
 
     let imgOne = document.createElement("img"),
-        imgTwo = document.createElement("img");
-
-    let divImgOne = document.createElement("div"),
-        divImgTwo = document.createElement("div");
-
-    let titleImgOne = document.createElement("h3"),
+        imgTwo = document.createElement("img"),
+        divImgOne = document.createElement("div"),
+        divImgTwo = document.createElement("div"),
+        titleImgOne = document.createElement("h3"),
         titleImgTwo = document.createElement("h3");
 
     divImgOne.classList.add("gameBox");
@@ -55,38 +53,73 @@ function getWinner() {
 
     let cont = 2;
 
-    itemOne.addEventListener("click", () => {
+    eventosEscuchaItemOne(
+        itemOne,
+        cont,
+        imgOne,
+        titleImgOne,
+        imgTwo,
+        titleImgTwo
+    );
+    eventosEscuchaItemTwo(
+        itemTwo,
+        cont,
+        imgOne,
+        titleImgOne,
+        imgTwo,
+        titleImgTwo
+    );
+}
+
+function eventosEscuchaItemOne(
+    item,
+    cont,
+    imagenUno,
+    titleUno,
+    imagenDos,
+    titleDos
+) {
+    item.addEventListener("click", () => {
         if (cont == 2) {
-            setItemOne(imgOne, 2, titleImgOne);
-            setItemTwo(imgTwo, 2, titleImgTwo);
+            setItemOne(imagenUno, 2, titleUno);
+            setItemTwo(imagenDos, 2, titleDos);
         } else if (cont == 3) {
-            setItemOne(imgOne, 3, titleImgOne);
-            setItemTwo(imgTwo, 3, titleImgTwo);
+            setItemOne(imagenUno, 3, titleUno);
+            setItemTwo(imagenDos, 3, titleDos);
         } else if (cont == 4) {
-            setItemOne(imgOne, 4, titleImgOne);
-            setItemTwo(imgTwo, 4, titleImgTwo);
+            setItemOne(imagenUno, 4, titleUno);
+            setItemTwo(imagenDos, 4, titleDos);
         } else {
-            setItemOne(imgOne, 1, titleImgOne);
-            setItemTwo(imgTwo, 1, titleImgTwo);
+            setItemOne(imagenUno, 1, titleUno);
+            setItemTwo(imagenDos, 1, titleDos);
             cont = 1;
         }
 
         cont += 1;
     });
+}
 
-    itemTwo.addEventListener("click", () => {
+function eventosEscuchaItemTwo(
+    item,
+    cont,
+    imagenUno,
+    titleUno,
+    imagenDos,
+    titleDos
+) {
+    item.addEventListener("click", () => {
         if (cont == 2) {
-            setItemOne(imgOne, 2, titleImgOne);
-            setItemTwo(imgTwo, 2, titleImgTwo);
+            setItemOne(imagenUno, 2, titleUno);
+            setItemTwo(imagenDos, 2, titleDos);
         } else if (cont == 3) {
-            setItemOne(imgOne, 3, titleImgOne);
-            setItemTwo(imgTwo, 3, titleImgTwo);
+            setItemOne(imagenUno, 3, titleUno);
+            setItemTwo(imagenDos, 3, titleDos);
         } else if (cont == 4) {
-            setItemOne(imgOne, 4, titleImgOne);
-            setItemTwo(imgTwo, 4, titleImgTwo);
+            setItemOne(imagenUno, 4, titleUno);
+            setItemTwo(imagenDos, 4, titleDos);
         } else {
-            setItemOne(imgOne, 1, titleImgOne);
-            setItemTwo(imgTwo, 1, titleImgTwo);
+            setItemOne(imagenUno, 1, titleUno);
+            setItemTwo(imagenDos, 1, titleDos);
             cont = 1;
         }
 
