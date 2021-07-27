@@ -18,4 +18,11 @@ function createPlayer(user) {
     this.health = 1000;
 }
 
-export { doTable, createPlayer };
+function startGame(btn, player) {
+    btn.addEventListener("click", () => {
+        main.removeChild(main.childNodes[1]);
+        console.log(player);
+    });
+}
+
+export { doTable, createPlayer, startGame };

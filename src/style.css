@@ -112,6 +112,7 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--main-bg-color);
     /* visibility: hidden; */
 }
 .overlayWelcome.active {
@@ -119,13 +120,13 @@ span {
 }
 
 .popupWelcome {
-    background-color: white;
+    background-color: var(--color-a);
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     padding: 20px;
     text-align: center;
     width: 450px;
-    height: 200px;
+    height: 220px;
     /* transition: 0.3s ease all;
     transform: scale(0.7);
      opacity: 0;  */
@@ -152,6 +153,25 @@ span {
 }
 
 .btnAdd:hover {
+    font-weight: 600;
+    transition: 0.3s ease all;
+    background-color: var(--main-bg-color);
+    color: var(--color-a);
+    width: 60%;
+}
+
+.contenedorObjetivo {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.objetivo {
+    width: 40%;
+    margin: 0 auto;
+    height: 80%;
+}
+
+.contenedorResumen input:hover {
     font-weight: 600;
     transition: 0.3s ease all;
     background-color: var(--main-bg-color);

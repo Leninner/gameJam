@@ -1,4 +1,4 @@
-import { createPlayer } from "./tableMain.js";
+import { createPlayer, startGame } from "./tableMain.js";
 
 const main = document.querySelector(".main");
 
@@ -30,15 +30,69 @@ function doPopUpWelcome() {
     overlayWelcome.appendChild(popUpWelcome);
     main.appendChild(overlayWelcome);
 
-    addPlayer(btnAdd, userName);
+    addPlayer(btnAdd, userName, overlayWelcome);
 }
 
-function addPlayer(btn, user) {
+function addPlayer(btn, user, overlay) {
     btn.addEventListener("click", () => {
         let player = new createPlayer(user.value);
-        console.log(player);
-        main.removeChild(main.childNodes[1]);
+        overlay.removeChild(overlay.childNodes[0]);
+        doResumeBefore(player.user, player.health, overlay, player);
     });
+    document.addEventListener("keydown", (e) => {
+        if (e.keyCode == 13) {
+            let player = new createPlayer(user.value);
+            overlay.removeChild(overlay.childNodes[0]);
+            doResumeBefore(player.user, player.health, overlay, player);
+        }
+    });
+}
+
+function doResumeBefore(user, health, overlay, player) {
+    let contenedorResumen = document.createElement("div"),
+        spanTitle = document.createElement("span"),
+        titleResumen = document.createElement("h1"),
+        spanHealth = document.createElement("span"),
+        healthResumen = document.createElement("h3"),
+        contenedorObjetivo = document.createElement("div"),
+        contenedorTitleObjetivo = document.createElement("div"),
+        contenedorPObjetivo = document.createElement("div"),
+        titleObjetivo = document.createElement("h4"),
+        pObjetivo = document.createElement("p"),
+        btnObjetivo = document.createElement("input");
+
+    contenedorResumen.classList.add("popupWelcome", "contenedorResumen");
+    contenedorObjetivo.classList.add("contenedorObjetivo");
+    contenedorTitleObjetivo.classList.add(
+        "contenedorTitleObjetivo",
+        "objetivo"
+    );
+    contenedorPObjetivo.classList.add("contenedorPObjetivo", "objetivo");
+    btnObjetivo.classList.add("btnObjetivo");
+
+    titleResumen.textContent = "Hi " + user + "!";
+    healthResumen.textContent = "Health:            " + health;
+    titleObjetivo.textContent = "Goal:";
+    pObjetivo.textContent =
+        "Choose the best option between the 2 images to be presented";
+    btnObjetivo.type = "button";
+    btnObjetivo.value = "Ok!";
+
+    spanTitle.appendChild(titleResumen);
+    spanHealth.appendChild(healthResumen);
+    contenedorTitleObjetivo.appendChild(titleObjetivo);
+    contenedorPObjetivo.appendChild(pObjetivo);
+    contenedorObjetivo.append(contenedorTitleObjetivo, contenedorPObjetivo);
+
+    contenedorResumen.append(
+        spanTitle,
+        spanHealth,
+        contenedorObjetivo,
+        btnObjetivo
+    );
+    overlay.appendChild(contenedorResumen);
+
+    startGame(btnObjetivo, player);
 }
 
 export { doPopUpWelcome };
