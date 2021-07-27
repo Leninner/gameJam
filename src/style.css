@@ -23,6 +23,9 @@ ul {
     justify-content: space-evenly;
     margin-top: 20px;
 }
+img {
+    border-radius: 5px;
+}
 
 /* Header */
 .contenedorHeader {
@@ -87,4 +90,9 @@ span {
     margin: 30px auto;
     background-color: var(--box-game);
     border-radius: 5px;
+    text-align: center;
+}
+
+.game img {
+    width: 80%;
 }
