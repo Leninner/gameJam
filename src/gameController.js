@@ -37,6 +37,9 @@ function getWinner() {
     let titleImgOne = document.createElement("h3"),
         titleImgTwo = document.createElement("h3");
 
+    divImgOne.classList.add("gameBox");
+    divImgTwo.classList.add("gameBox");
+
     titleImgOne.textContent = goodPractices[1].frase;
     titleImgTwo.textContent = badPractices[1].frase;
 
