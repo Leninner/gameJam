@@ -28,14 +28,6 @@ function addPlayer(btn, user, overlay) {
         doResumeBefore(player.user, player.health, overlay);
         setElements(player);
     });
-    document.addEventListener("keydown", (e) => {
-        if (e.keyCode == 13) {
-            let player = new createPlayer(user.value);
-            overlay.removeChild(overlay.childNodes[0]);
-            doResumeBefore(player.user, player.health, overlay, player);
-            setElements(player);
-        }
-    });
 }
 
 export { doTable, createPlayer, addPlayer };
