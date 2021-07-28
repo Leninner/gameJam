@@ -103,7 +103,7 @@ span {
 
 .overlayWelcome {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.89);
     position: fixed;
     top: 0;
     bottom: 0;

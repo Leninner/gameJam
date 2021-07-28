@@ -1,3 +1,4 @@
+import { setElements } from "./gameController.js";
 import { doResumeBefore } from "./popup.js";
 
 const main = document.querySelector(".main");
@@ -24,13 +25,15 @@ function addPlayer(btn, user, overlay) {
     btn.addEventListener("click", () => {
         let player = new createPlayer(user.value);
         overlay.removeChild(overlay.childNodes[0]);
-        doResumeBefore(player.user, player.health, overlay, player);
+        doResumeBefore(player.user, player.health, overlay);
+        setElements(player);
     });
     document.addEventListener("keydown", (e) => {
         if (e.keyCode == 13) {
             let player = new createPlayer(user.value);
             overlay.removeChild(overlay.childNodes[0]);
             doResumeBefore(player.user, player.health, overlay, player);
+            setElements(player);
         }
     });
 }

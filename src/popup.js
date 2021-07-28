@@ -34,7 +34,7 @@ function doPopUpWelcome() {
     addPlayer(btnAdd, userName, overlayWelcome);
 }
 
-function doResumeBefore(user, health, overlay, player) {
+function doResumeBefore(user, health, overlay) {
     let contenedorResumen = document.createElement("div"),
         spanTitle = document.createElement("span"),
         titleResumen = document.createElement("h1"),
@@ -78,7 +78,9 @@ function doResumeBefore(user, health, overlay, player) {
     );
     overlay.appendChild(contenedorResumen);
 
-    startGame(btnObjetivo, player, main);
+    startGame(btnObjetivo, main);
 }
+
+function doResumeAfter() {}
 
 export { doPopUpWelcome, doResumeBefore };

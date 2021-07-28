@@ -24,7 +24,7 @@ let badPractices = {
 
 //TODO: Hacer titulos de cada imagen para que el niño haga su elección
 
-function getWinner() {
+function getWinner(player) {
     const itemOne = document.querySelector(".divItemOne"),
         itemTwo = document.querySelector(".divItemTwo");
 
@@ -59,7 +59,8 @@ function getWinner() {
         imgOne,
         titleImgOne,
         imgTwo,
-        titleImgTwo
+        titleImgTwo,
+        player
     );
     eventosEscuchaItemTwo(
         itemTwo,
@@ -67,7 +68,8 @@ function getWinner() {
         imgOne,
         titleImgOne,
         imgTwo,
-        titleImgTwo
+        titleImgTwo,
+        player
     );
 }
 
@@ -77,22 +79,23 @@ function eventosEscuchaItemOne(
     imagenUno,
     titleUno,
     imagenDos,
-    titleDos
+    titleDos,
+    player
 ) {
     item.addEventListener("click", () => {
         if (cont == 2) {
-            setItemOne(imagenUno, 2, titleUno);
-            setItemTwo(imagenDos, 2, titleDos);
+            setItemOne(imagenUno, 2, titleUno, player);
+            setItemTwo(imagenDos, 2, titleDos, player);
         } else if (cont == 3) {
-            setItemOne(imagenUno, 3, titleUno);
-            setItemTwo(imagenDos, 3, titleDos);
+            setItemOne(imagenUno, 3, titleUno, player);
+            setItemTwo(imagenDos, 3, titleDos, player);
         } else if (cont == 4) {
-            setItemOne(imagenUno, 4, titleUno);
-            setItemTwo(imagenDos, 4, titleDos);
+            setItemOne(imagenUno, 4, titleUno, player);
+            setItemTwo(imagenDos, 4, titleDos, player);
         } else {
-            setItemOne(imagenUno, 1, titleUno);
-            setItemTwo(imagenDos, 1, titleDos);
-            cont = 1;
+            setItemOne(imagenUno, 1, titleUno, player);
+            setItemTwo(imagenDos, 1, titleDos, player);
+            cont = 2;
         }
 
         cont += 1;
@@ -105,50 +108,52 @@ function eventosEscuchaItemTwo(
     imagenUno,
     titleUno,
     imagenDos,
-    titleDos
+    titleDos,
+    player
 ) {
     item.addEventListener("click", () => {
         if (cont == 2) {
-            setItemOne(imagenUno, 2, titleUno);
-            setItemTwo(imagenDos, 2, titleDos);
+            setItemOne(imagenUno, 2, titleUno, player);
+            setItemTwo(imagenDos, 2, titleDos, player, 1000);
         } else if (cont == 3) {
-            setItemOne(imagenUno, 3, titleUno);
-            setItemTwo(imagenDos, 3, titleDos);
+            setItemOne(imagenUno, 3, titleUno, player);
+            setItemTwo(imagenDos, 3, titleDos, player, 350);
         } else if (cont == 4) {
-            setItemOne(imagenUno, 4, titleUno);
-            setItemTwo(imagenDos, 4, titleDos);
+            setItemOne(imagenUno, 4, titleUno, player);
+            setItemTwo(imagenDos, 4, titleDos, player, 200);
         } else {
-            setItemOne(imagenUno, 1, titleUno);
-            setItemTwo(imagenDos, 1, titleDos);
-            cont = 1;
+            setItemOne(imagenUno, 1, titleUno, player);
+            setItemTwo(imagenDos, 1, titleDos, player, 600);
+            cont = 2;
         }
-
         cont += 1;
     });
 }
 
-function setItemOne(image, number, title) {
+function setItemOne(image, number, title, player) {
     image.alt = "Esta es una buena imagen";
     image.src = goodPractices[number].imagen;
     title.textContent = goodPractices[number].frase;
+    console.log(player.health);
 }
 
-function setItemTwo(image, number, title) {
+function setItemTwo(image, number, title, player, damage = 0) {
     image.alt = "Esta es una mala imagen";
     image.src = badPractices[number].imagen;
     title.textContent = badPractices[number].frase;
+    player.health -= damage;
+    console.log(player.health);
 }
 
-function startGame(btn, player, main) {
+function startGame(btn, main) {
     btn.addEventListener("click", () => {
         main.removeChild(main.childNodes[1]);
-        console.log(player);
     });
 }
 
-function setElements() {
+function setElements(player) {
     doTable();
-    getWinner();
+    getWinner(player);
 }
 
 export { setElements, startGame };

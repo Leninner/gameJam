@@ -60,7 +60,6 @@ function doFooter() {
 function constructor() {
     doHeader();
     doPopUpWelcome();
-    setElements();
     doFooter();
 }
 
