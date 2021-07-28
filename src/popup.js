@@ -1,4 +1,5 @@
-import { createPlayer, startGame } from "./tableMain.js";
+import { addPlayer } from "./tableMain.js";
+import { startGame } from "./gameController.js";
 
 const main = document.querySelector(".main");
 
@@ -33,21 +34,6 @@ function doPopUpWelcome() {
     addPlayer(btnAdd, userName, overlayWelcome);
 }
 
-function addPlayer(btn, user, overlay) {
-    btn.addEventListener("click", () => {
-        let player = new createPlayer(user.value);
-        overlay.removeChild(overlay.childNodes[0]);
-        doResumeBefore(player.user, player.health, overlay, player);
-    });
-    document.addEventListener("keydown", (e) => {
-        if (e.keyCode == 13) {
-            let player = new createPlayer(user.value);
-            overlay.removeChild(overlay.childNodes[0]);
-            doResumeBefore(player.user, player.health, overlay, player);
-        }
-    });
-}
-
 function doResumeBefore(user, health, overlay, player) {
     let contenedorResumen = document.createElement("div"),
         spanTitle = document.createElement("span"),
@@ -74,7 +60,7 @@ function doResumeBefore(user, health, overlay, player) {
     healthResumen.textContent = "Health:            " + health;
     titleObjetivo.textContent = "Goal:";
     pObjetivo.textContent =
-        "Choose the best option between the 2 images to be presented";
+        "Choose the best option between the 2 images to be presented and in the end I will tell you if you will survive or not";
     btnObjetivo.type = "button";
     btnObjetivo.value = "Ok!";
 
@@ -92,7 +78,7 @@ function doResumeBefore(user, health, overlay, player) {
     );
     overlay.appendChild(contenedorResumen);
 
-    startGame(btnObjetivo, player);
+    startGame(btnObjetivo, player, main);
 }
 
-export { doPopUpWelcome };
+export { doPopUpWelcome, doResumeBefore };

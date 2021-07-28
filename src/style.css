@@ -178,3 +178,11 @@ span {
     color: var(--color-a);
     width: 60%;
 }
+
+.contenedorResumen {
+    height: 300px;
+}
+
+.contenedorResumen p {
+    font-weight: 600;
+}

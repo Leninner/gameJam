@@ -1,3 +1,5 @@
+import { doResumeBefore } from "./popup.js";
+
 const main = document.querySelector(".main");
 
 function doTable() {
@@ -18,11 +20,19 @@ function createPlayer(user) {
     this.health = 1000;
 }
 
-function startGame(btn, player) {
+function addPlayer(btn, user, overlay) {
     btn.addEventListener("click", () => {
-        main.removeChild(main.childNodes[1]);
-        console.log(player);
+        let player = new createPlayer(user.value);
+        overlay.removeChild(overlay.childNodes[0]);
+        doResumeBefore(player.user, player.health, overlay, player);
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.keyCode == 13) {
+            let player = new createPlayer(user.value);
+            overlay.removeChild(overlay.childNodes[0]);
+            doResumeBefore(player.user, player.health, overlay, player);
+        }
     });
 }
 
-export { doTable, createPlayer, startGame };
+export { doTable, createPlayer, addPlayer };

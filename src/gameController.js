@@ -139,9 +139,16 @@ function setItemTwo(image, number, title) {
     title.textContent = badPractices[number].frase;
 }
 
+function startGame(btn, player, main) {
+    btn.addEventListener("click", () => {
+        main.removeChild(main.childNodes[1]);
+        console.log(player);
+    });
+}
+
 function setElements() {
     doTable();
     getWinner();
 }
 
-export { setElements };
+export { setElements, startGame };
