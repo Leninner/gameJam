@@ -22,8 +22,6 @@ let badPractices = {
     4: { imagen: chatarra, frase: "Comida Chatarra" },
 };
 
-//TODO: Hacer titulos de cada imagen para que el niño haga su elección
-
 function getWinner(player) {
     let itemOne = document.querySelector(".divItemOne"),
         itemTwo = document.querySelector(".divItemTwo");
@@ -93,28 +91,37 @@ function eventosEscuchaItems(
 
     itemDos.addEventListener("click", () => {
         if (cont == 2) {
-            setItems(imagenUno, 2, titleUno, player, imagenDos, titleDos);
+            setItems(imagenUno, 2, titleUno, player, imagenDos, titleDos, 800);
             cont++;
         } else if (cont == 3) {
-            setItems(imagenUno, 3, titleUno, player, imagenDos, titleDos);
+            setItems(imagenUno, 3, titleUno, player, imagenDos, titleDos, 350);
             cont++;
         } else if (cont == 4) {
-            setItems(imagenUno, 4, titleUno, player, imagenDos, titleDos);
+            setItems(imagenUno, 4, titleUno, player, imagenDos, titleDos, 150);
             cont++;
         } else {
-            setItems(imagenUno, 1, titleUno, player, imagenDos, titleDos);
+            setItems(imagenUno, 1, titleUno, player, imagenDos, titleDos, 600);
             cont = 2;
         }
     });
 }
 
-function setItems(imagenUno, number, titleUno, player, imagenDos, titleDos) {
+function setItems(
+    imagenUno,
+    number,
+    titleUno,
+    player,
+    imagenDos,
+    titleDos,
+    damage = 0
+) {
     imagenUno.alt = "Esta es una buena imagen";
     imagenUno.src = goodPractices[number].imagen;
     titleUno.textContent = goodPractices[number].frase;
     imagenDos.alt = "Esta es una mala imagen";
     imagenDos.src = badPractices[number].imagen;
     titleDos.textContent = badPractices[number].frase;
+    player.health -= damage;
     console.log(player.health);
 }
 
