@@ -15,6 +15,7 @@
 html {
     min-height: 100%;
     position: relative;
+    background-color: var(--main-bg-color);
 }
 
 ul {
@@ -25,6 +26,16 @@ ul {
 }
 img {
     border-radius: 5px;
+    cursor: pointer;
+}
+img:hover {
+    transform: scale(1.1);
+    margin-top: 15px;
+    transition: 0.5s ease all;
+}
+
+input {
+    cursor: pointer;
 }
 
 /* Header */
@@ -97,6 +108,9 @@ span {
     width: 80%;
     height: 80%;
     text-align: center;
+    color: var(--main-bg-color);
+    font-weight: 600;
+    font-size: 20px;
 }
 
 /* Get user name */
@@ -185,4 +199,20 @@ span {
 
 .contenedorResumen p {
     font-weight: 600;
+}
+
+/* Controlador de Vida */
+
+.contenedorLive {
+    width: 80%;
+    height: 60px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: var(--color-a);
+    cursor: pointer;
+}
+
+.contenedorLive:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease all;
 }

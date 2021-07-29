@@ -30,4 +30,12 @@ function addPlayer(btn, user, overlay) {
     });
 }
 
-export { doTable, createPlayer, addPlayer };
+function doControlLive() {
+    let divContenedorLive = document.createElement("div");
+
+    divContenedorLive.classList.add("contenedorLive");
+
+    main.appendChild(divContenedorLive);
+}
+
+export { doTable, createPlayer, addPlayer, doControlLive };

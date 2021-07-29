@@ -127,7 +127,7 @@ function setItems(
 
 function startGame(btn, main) {
     btn.addEventListener("click", () => {
-        main.removeChild(main.childNodes[1]);
+        main.removeChild(main.childNodes[2]);
     });
 }
 
