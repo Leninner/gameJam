@@ -160,6 +160,7 @@ span {
     text-align: center;
     border: 1px solid var(--main-bg-color);
     border-radius: 5px;
+    outline-style: none;
 }
 .popupWelcome.active {
     opacity: 1;
