@@ -59,7 +59,6 @@ function doFooter() {
 
 function constructor() {
     doHeader();
-    doControlLive();
     doPopUpWelcome();
     doFooter();
 }
