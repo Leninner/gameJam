@@ -7,6 +7,7 @@ import saludable from "./images/saludableFood.jpg";
 import sinMacarilla from "./images/sinMascarilla.jpg";
 import virus from "./images/virus.jpg";
 import { doTable } from "./tableMain.js";
+import { doResumeAfter } from "./popup.js";
 
 let goodPractices = {
     1: { imagen: distancia, frase: "Mantener Distancia" },
@@ -77,31 +78,62 @@ function eventosEscuchaItems(
         if (cont == 2) {
             setItems(imagenUno, 2, titleUno, player, imagenDos, titleDos);
             cont++;
+            console.log(player.health);
         } else if (cont == 3) {
             setItems(imagenUno, 3, titleUno, player, imagenDos, titleDos);
             cont++;
+            console.log(player.health);
         } else if (cont == 4) {
             setItems(imagenUno, 4, titleUno, player, imagenDos, titleDos);
             cont++;
         } else {
-            setItems(imagenUno, 1, titleUno, player, imagenDos, titleDos);
-            cont = 2;
+            if (player.health > 0) {
+                doResumeAfter(
+                    "Congrats!",
+                    "You Live One More Day",
+                    "Excellent, your life will be long. Take care of your family",
+                    player
+                );
+            } else {
+                doResumeAfter(
+                    "I´m Sorry",
+                    "You Die",
+                    "Lucky you are not dead in real life, take care of your family, please!",
+                    player
+                );
+            }
         }
     });
 
     itemDos.addEventListener("click", () => {
         if (cont == 2) {
-            setItems(imagenUno, 2, titleUno, player, imagenDos, titleDos, 800);
+            setItems(imagenUno, 2, titleUno, player, imagenDos, titleDos, 600);
             cont++;
+            console.log(player.health);
         } else if (cont == 3) {
             setItems(imagenUno, 3, titleUno, player, imagenDos, titleDos, 350);
             cont++;
+            console.log(player.health);
         } else if (cont == 4) {
             setItems(imagenUno, 4, titleUno, player, imagenDos, titleDos, 150);
             cont++;
         } else {
-            setItems(imagenUno, 1, titleUno, player, imagenDos, titleDos, 600);
-            cont = 2;
+            setItems(imagenUno, 1, titleUno, player, imagenDos, titleDos, 200);
+            if (player.health < 0) {
+                doResumeAfter(
+                    "I´m sorry",
+                    "You Die",
+                    "Lucky you are not dead in real life, take care of your family, please!",
+                    player
+                );
+            } else {
+                doResumeAfter(
+                    "Congrats!",
+                    "You Live One More Day",
+                    "Excellent, your life will be long. Take care of your family",
+                    player
+                );
+            }
         }
     });
 }
@@ -122,12 +154,11 @@ function setItems(
     imagenDos.src = badPractices[number].imagen;
     titleDos.textContent = badPractices[number].frase;
     player.health -= damage;
-    console.log(player.health);
 }
 
 function startGame(btn, main) {
     btn.addEventListener("click", () => {
-        main.removeChild(main.childNodes[2]);
+        main.removeChild(main.childNodes[1]);
     });
 }
 

@@ -81,6 +81,47 @@ function doResumeBefore(user, health, overlay) {
     startGame(btnObjetivo, main);
 }
 
-function doResumeAfter() {}
+function doResumeAfter(one, message, phrase, user) {
+    const main = document.querySelector(".main");
 
-export { doPopUpWelcome, doResumeBefore };
+    main.removeChild(main.childNodes[2]);
+
+    let contenedorResumen = document.createElement("div"),
+        spanTitle = document.createElement("span"),
+        titleResumen = document.createElement("h1"),
+        spanHealth = document.createElement("span"),
+        healthResumen = document.createElement("h3"),
+        contenedorObjetivo = document.createElement("div"),
+        contenedorTitleObjetivo = document.createElement("div"),
+        contenedorPObjetivo = document.createElement("div"),
+        titleObjetivo = document.createElement("h4"),
+        pObjetivo = document.createElement("p");
+
+    contenedorResumen.classList.add(
+        "popupWelcome",
+        "contenedorResumen",
+        "contenedorFinal"
+    );
+    contenedorObjetivo.classList.add("contenedorObjetivo");
+    contenedorTitleObjetivo.classList.add(
+        "contenedorTitleObjetivo",
+        "objetivo"
+    );
+    contenedorPObjetivo.classList.add("contenedorPObjetivo", "objetivo");
+
+    titleResumen.textContent = one + user.user + "!";
+    healthResumen.textContent = "Health:            " + user.health;
+    titleObjetivo.textContent = message;
+    pObjetivo.textContent = phrase;
+
+    spanTitle.appendChild(titleResumen);
+    spanHealth.appendChild(healthResumen);
+    contenedorTitleObjetivo.appendChild(titleObjetivo);
+    contenedorPObjetivo.appendChild(pObjetivo);
+    contenedorObjetivo.append(contenedorTitleObjetivo, contenedorPObjetivo);
+
+    contenedorResumen.append(spanTitle, spanHealth, contenedorObjetivo);
+    main.appendChild(contenedorResumen);
+}
+
+export { doPopUpWelcome, doResumeBefore, doResumeAfter };

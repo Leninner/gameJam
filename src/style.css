@@ -141,9 +141,6 @@ span {
     text-align: center;
     width: 450px;
     height: 220px;
-    /* transition: 0.3s ease all;
-    transform: scale(0.7);
-     opacity: 0;  */
 }
 .popupWelcome h1 {
     font-size: 36px;
@@ -196,6 +193,11 @@ span {
 
 .contenedorResumen {
     height: 300px;
+}
+
+.contenedorFinal {
+    margin: 90px auto;
+    height: auto;
 }
 
 .contenedorResumen p {
