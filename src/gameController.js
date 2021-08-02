@@ -10,17 +10,17 @@ import { doTable } from "./tableMain.js";
 import { doResumeAfter } from "./popup.js";
 
 let goodPractices = {
-    1: { imagen: distancia, frase: "Mantener Distancia" },
-    2: { imagen: manos, frase: "Lavarse las Manos" },
-    3: { imagen: mascarilla, frase: "Usar mascarilla" },
-    4: { imagen: saludable, frase: "Comer saludable" },
+    1: { imagen: distancia, frase: "Keep distance" },
+    2: { imagen: manos, frase: "Handwashing" },
+    3: { imagen: mascarilla, frase: "Wear mask" },
+    4: { imagen: saludable, frase: "Eat healthy" },
 };
 
 let badPractices = {
-    1: { imagen: aglomeracion, frase: "Estar todos unidos" },
+    1: { imagen: aglomeracion, frase: "Be all united" },
     2: { imagen: virus, frase: "Covid - 19" },
-    3: { imagen: sinMacarilla, frase: "No usar mascarilla" },
-    4: { imagen: chatarra, frase: "Comida Chatarra" },
+    3: { imagen: sinMacarilla, frase: "Not wear mask" },
+    4: { imagen: chatarra, frase: "Eat junk food" },
 };
 
 function getWinner(player) {

@@ -109,7 +109,7 @@ function doResumeAfter(one, message, phrase, user) {
     );
     contenedorPObjetivo.classList.add("contenedorPObjetivo", "objetivo");
 
-    titleResumen.textContent = one + user.user + "!";
+    titleResumen.textContent = one + " " + user.user + "!";
     healthResumen.textContent = "Health:            " + user.health;
     titleObjetivo.textContent = message;
     pObjetivo.textContent = phrase;
